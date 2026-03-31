@@ -21,6 +21,9 @@ public class GameGroup {
 
     private String groupName;
 
+    @ManyToOne
+    @JoinColumn(name = "group_owners")
+    private User groupOwner;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
