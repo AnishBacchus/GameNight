@@ -3,7 +3,9 @@ package com.abacchus.GameNight.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +21,16 @@ public class GameGroup {
 
     private String groupName;
 
-    @ManyToMany
-    private List<User> users = new ArrayList<>();
 
+    @CreationTimestamp
+    private LocalDateTime createdAt;
+
+    @ManyToMany
+    @JoinTable(
+            name = "group_members",
+            joinColumns = @JoinColumn(name = "group_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private List<User> users = new ArrayList<>();
 
 }
