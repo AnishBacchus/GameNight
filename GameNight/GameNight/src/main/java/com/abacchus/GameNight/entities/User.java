@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,5 +23,8 @@ public class User {
 
     @CreationTimestamp
     private LocalDateTime accountCreationDate;
+
+    @ManyToMany(mappedBy = "users")
+    private List<GameGroup> groups = new ArrayList<>();
 
 }
