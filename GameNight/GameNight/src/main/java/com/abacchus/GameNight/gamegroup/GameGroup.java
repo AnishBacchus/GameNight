@@ -1,5 +1,6 @@
-package com.abacchus.GameNight.entities;
+package com.abacchus.GameNight.gamegroup;
 
+import com.abacchus.GameNight.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
