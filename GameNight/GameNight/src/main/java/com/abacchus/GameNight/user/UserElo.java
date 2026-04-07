@@ -1,18 +1,28 @@
 package com.abacchus.GameNight.user;
 
 import com.abacchus.GameNight.game.Game;
-import com.abacchus.GameNight.match.MatchResult;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class UserGameElo {
+@Table(name = "user_elo")
+public class UserElo {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
-    private MatchResult matchResult;
+
+    @ManyToOne
+    @JoinColumn(name = "game_id")
     private Game game;
+
+    private double eloRating;
 
 }
