@@ -1,6 +1,6 @@
-package com.abacchus.GameNight.match;
+package com.abacchus.GameNight.matches;
 
-import com.abacchus.GameNight.user.User;
+import com.abacchus.GameNight.users.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

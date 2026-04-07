@@ -1,4 +1,4 @@
-package com.abacchus.GameNight.game;
+package com.abacchus.GameNight.games;
 
 import jakarta.persistence.*;
 import lombok.Getter;
