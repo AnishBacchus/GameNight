@@ -23,7 +23,7 @@ public class MatchResult {
 
     @ManyToOne
     @JoinColumn(name = "match_id")
-    private Match match;
+    private MatchPlayed match;
 
     private Integer placement;
 

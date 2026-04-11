@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Table(name = "match")
-public class Match {
+public class MatchPlayed {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
