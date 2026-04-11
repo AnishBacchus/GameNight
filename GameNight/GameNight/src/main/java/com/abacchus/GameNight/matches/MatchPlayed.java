@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-@Table(name = "match")
+@Table(name = "match_played")
 public class MatchPlayed {
 
     @Id
