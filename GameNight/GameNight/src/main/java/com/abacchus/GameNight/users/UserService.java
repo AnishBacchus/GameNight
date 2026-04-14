@@ -13,12 +13,17 @@ public class UserService {
 
     public UserResponseDTO createUser(UserCreateDTO userCreateDTO){
         User user = new User();
-        UserResponseDTO responseDTO = new UserResponseDTO();
 
         user.setUsername(userCreateDTO.getUsername());
         user.setPassword(userCreateDTO.getPassword());
         user.setEmail(userCreateDTO.getEmail());
         userRepository.save(user);
+
+        return toUserResponseDTO(user);
+    }
+
+    public UserResponseDTO toUserResponseDTO (User user){
+        UserResponseDTO responseDTO = new UserResponseDTO();
 
         responseDTO.setId(user.getId());
         responseDTO.setUsername(user.getUsername());
