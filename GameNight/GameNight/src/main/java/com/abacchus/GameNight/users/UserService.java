@@ -11,7 +11,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public ResponseEntity<String> createUser(UserCreateDTO userCreateDTO){
+    public User createUser(UserCreateDTO userCreateDTO){
         User user = new User();
 
         user.setUsername(userCreateDTO.getUsername());
@@ -19,6 +19,6 @@ public class UserService {
         user.setEmail(userCreateDTO.getEmail());
 
         userRepository.save(user);
-        return ResponseEntity.status(HttpStatus.CREATED).body("User account created!");
+        return user;
     }
 }
