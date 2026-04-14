@@ -11,14 +11,19 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public User createUser(UserCreateDTO userCreateDTO){
+    public UserResponseDTO createUser(UserCreateDTO userCreateDTO){
         User user = new User();
+        UserResponseDTO responseDTO = new UserResponseDTO();
 
         user.setUsername(userCreateDTO.getUsername());
         user.setPassword(userCreateDTO.getPassword());
         user.setEmail(userCreateDTO.getEmail());
-
         userRepository.save(user);
-        return user;
+
+        responseDTO.setId(user.getId());
+        responseDTO.setUsername(user.getUsername());
+        responseDTO.setEmail(user.getEmail());
+
+        return responseDTO;
     }
 }
