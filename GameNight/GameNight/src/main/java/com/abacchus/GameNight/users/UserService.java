@@ -22,7 +22,6 @@ public class UserService {
         return toUserResponseDTO(user);
     }
 
-    //Comment for commit
     public UserResponseDTO toUserResponseDTO (User user){
         UserResponseDTO responseDTO = new UserResponseDTO();
 
