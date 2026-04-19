@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Optional;
 
@@ -38,7 +39,7 @@ public class UserService {
         Optional<User> findUser = userRepository.findById(id);
 
         if (findUser.isEmpty()){
-            return null;
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
         }
         User user = findUser.get();
 
