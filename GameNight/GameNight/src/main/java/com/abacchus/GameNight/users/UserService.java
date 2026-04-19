@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
@@ -31,4 +33,18 @@ public class UserService {
 
         return responseDTO;
     }
+
+    public UserResponseDTO getUser(Long id){
+        Optional<User> findUser = userRepository.findById(id);
+
+        if (findUser.isEmpty()){
+            return null;
+        }
+        User user = findUser.get();
+
+        return toUserResponseDTO(user);
+    }
+
 }
+
+

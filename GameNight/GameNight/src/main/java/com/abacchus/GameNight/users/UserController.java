@@ -21,4 +21,6 @@ public class UserController {
         UserResponseDTO user = userService.createUser(userDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
     }
+
+
 }
