@@ -43,7 +43,7 @@ public class UserService {
         }
         User user = findUser.get();
 
-        // Commit
+
         return toUserResponseDTO(user);
     }
 
