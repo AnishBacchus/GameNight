@@ -7,6 +7,7 @@ import lombok.Setter;
 @Setter
 public class GameResponseDTO {
 
+    private long id;
     private String name;
     private String category;
     private String desc;

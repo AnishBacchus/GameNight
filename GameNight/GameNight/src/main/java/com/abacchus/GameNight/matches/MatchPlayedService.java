@@ -9,8 +9,5 @@ public class MatchPlayedService {
     @Autowired
     MatchPlayedRepository matchPlayedRepository;
 
-    public MatchPlayedRepository createMatch() {
 
-        }
-    }
-
+}
